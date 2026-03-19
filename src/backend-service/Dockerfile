@@ -1,5 +1,5 @@
 # Use Node.js 18 Alpine as base image
-FROM node:18-alpine AS base
+FROM node:25-alpine AS base
 
 # Set working directory
 WORKDIR /app
@@ -26,7 +26,7 @@ COPY . .
 COPY dist ./dist
 
 # Production stage
-FROM node:18-alpine AS production
+FROM node:25-alpine AS production
 
 # Set working directory
 WORKDIR /app
