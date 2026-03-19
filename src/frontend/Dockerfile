@@ -4,7 +4,7 @@
 # 2. Serves it via an Express server with Dapr integration
 # 3. Proxies API calls to backend services through Dapr sidecar
 
-FROM node:18-alpine AS deps
+FROM node:25-alpine AS deps
 
 # Set working directory
 WORKDIR /app
@@ -19,7 +19,7 @@ WORKDIR /app/server
 RUN npm ci --only=production && npm cache clean --force
 
 # Build stage - Create React production build
-FROM node:18-alpine AS builder
+FROM node:25-alpine AS builder
 
 WORKDIR /app
 
@@ -34,7 +34,7 @@ COPY . .
 RUN npm run build
 
 # Production stage - Lightweight server container
-FROM node:18-alpine
+FROM node:25-alpine
 
 WORKDIR /app
 
