@@ -20,7 +20,7 @@
     "express-validator": "^7.0.1",
     "jsonwebtoken": "^9.0.1",
     "bcryptjs": "^2.4.3",
-    "uuid": "^9.0.0",
+    "uuid": "^13.0.0",
     "winston": "^3.9.0",
     "dotenv": "^16.3.1",
     "@dapr/dapr": "^3.1.0",
